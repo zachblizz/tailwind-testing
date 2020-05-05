@@ -4,8 +4,15 @@ import Row from './components/ui/Row';
 
 import Card from './components/Card';
 import Table from './components/Table';
+import Button from './components/ui/Button';
 
 function App() {
+  const [even, setEven] = React.useState(false);
+
+  const handleClick = React.useCallback(() => {
+    setEven(e => !e);
+  }, [setEven]);
+
   return (
     <div className="container">
       <Row>
@@ -13,7 +20,8 @@ function App() {
         <Card />
         <Card />
       </Row>
-      <Table />
+      <Button onClick={handleClick} btnTxt={even ? "even" : "default"} />
+      <Table even={even} />
     </div>
   );
 }

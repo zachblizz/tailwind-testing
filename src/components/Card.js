@@ -7,7 +7,7 @@ export default function Card() {
     const pills = useMemo(() => (["tailwind", "coolthings", "here"]), []);
 
     return (
-        <div className="mx-2 sm:w-full md:w-full lg:w-1/2 xl:w-1/3 rounded overflow-hidden shadow-lg">
+        <div className="mx-2 sm:w-full md:w-full lg:w-1/2 xl:w-1/3 rounded overflow-hidden shadow">
             <div className="max-h-150 overflow-hidden">
                 <img
                     className="w-fill"
