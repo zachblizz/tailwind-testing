@@ -6,7 +6,7 @@ export default function Th({ children, ...props }) {
         <th
             {...props}
             className={clsx(
-                "px-4 py-2 text-left border bg-gray-400 capitalize",
+                "px-4 py-2 text-left bg-gray-400 capitalize",
                 props.onClick && "cursor-pointer"
             )}
         >

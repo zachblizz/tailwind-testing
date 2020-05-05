@@ -1,9 +1,7 @@
 import React from "react";
 
-import Td from "./ui/table/Td";
-import Th from "./ui/table/Th";
 import Pill from "./ui/Pill";
-import Tr from "./ui/table/Tr";
+import { Tr, Th, Td } from "./ui/table";
 import clsx from "clsx";
 
 export default function Table({ even }) {

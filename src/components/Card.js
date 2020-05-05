@@ -33,7 +33,7 @@ export default function Card() {
                 <Button btnTxt="read more &rarr;" primary onClick={() => alert("clicked")} />
             </div>
             <div className="px-6 py-4">
-                {pills.map((txt) => <Pill key={txt} txt={txt} hash inline />)}
+                {pills.map((txt) => <Pill key={txt} hash inline>{txt}</Pill>)}
             </div>
         </div>
     );

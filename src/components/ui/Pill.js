@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import clsx from "clsx";
 
-export default function Pill({ color, txt, hash, inline }) {
+export default function Pill({ children, txt, color, hash, inline }) {
     const colors = useMemo(() => ({
         danger: "bg-red-400 text-white",
         warning: "bg-orange-400 text-white",
@@ -17,7 +17,7 @@ export default function Pill({ color, txt, hash, inline }) {
                 inline && "mr-2 mb-2"
             )}
         >
-            {hash && "#"}{txt}
+            {hash && "#"}{children ?? txt}
         </span>
     )
 }

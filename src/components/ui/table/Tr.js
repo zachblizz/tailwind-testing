@@ -6,7 +6,7 @@ export default function Tr({ children, hover, ...props }) {
         <tr
             {...props}
             className={clsx(
-                "text-gray-700",
+                "border text-gray-700",
                 hover && "hover:bg-gray-300"
             )}
         >{children}</tr>
