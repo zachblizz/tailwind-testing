@@ -21,7 +21,7 @@ function App() {
     return (
         <>
             <Nav />
-            <div className="container">
+            <div className="container pt-70">
                 <Row>
                     <Card
                         content="When I'm here, I'm also there. This is just some jibberish, so I can see what it looks like on the card..."

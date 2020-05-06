@@ -386,7 +386,10 @@ module.exports = {
       '11': '11',
       '12': '12',
     },
-    padding: theme => theme('spacing'),
+    padding: theme => ({
+      ...theme('spacing'),
+      '70': '70px',
+    }),
     placeholderColor: theme => theme('colors'),
     placeholderOpacity: theme => theme('opacity'),
     space: (theme, { negative }) => ({
