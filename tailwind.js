@@ -281,6 +281,7 @@ module.exports = {
       full: '100%',
       screen: '100vh',
       content: '173px',
+      '70': '70px',
     }),
     inset: {
       '0': '0',
