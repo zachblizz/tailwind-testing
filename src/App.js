@@ -1,22 +1,25 @@
 import React, { useMemo } from "react";
 
-import Button from "./components/ui/Button";
 import Row from "./components/ui/Row";
 
 import Card from "./components/Card";
 import Nav from "./components/Nav";
 import Table from "./components/Table";
+import Offline from "./components/Offline";
+
+import useOnline from "./hooks/useOnline";
 
 function App() {
-    const [even, setEven] = React.useState(false);
     const pills = useMemo(
         () => ["tailwind", "music", "climbing", "hiking"],
         [],
     );
 
-    const handleClick = React.useCallback(() => {
-        setEven((e) => !e);
-    }, [setEven]);
+    const online = useOnline();
+
+    if (!online) {
+        return <Offline />;
+    }
 
     return (
         <>
@@ -42,11 +45,7 @@ function App() {
                         pills={pills.slice(1, 2)}
                     />
                 </Row>
-                <Button
-                    onClick={handleClick}
-                    btnTxt={even ? "even" : "default"}
-                />
-                <Table even={even} />
+                <Table isList />
             </div>
         </>
     );
