@@ -3,17 +3,17 @@ import { useEffect } from "react";
 import useBoolean from "./useBoolean";
 
 export default function useOnline() {
-    const [online, { on, off }] = useBoolean(navigator?.onLine);
+    const [isOnline, { on: online, off: offline }] = useBoolean(navigator?.onLine);
 
     useEffect(() => {
-        window.addEventListener('online', on);
-        window.addEventListener('offline', off);
+        window.addEventListener('online', online);
+        window.addEventListener('offline', offline);
 
         return () => {
-            window.removeEventListener('online', on);
-            window.removeEventListener('offline', off);
+            window.removeEventListener('online', online);
+            window.removeEventListener('offline', offline);
         }
-    }, [on, off]);
+    }, [online, offline]);
 
-    return online;
+    return isOnline;
 }
